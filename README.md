@@ -2,7 +2,7 @@
 
 A complete small-office network built in Cisco Packet Tracer. The lab connects two departments (Sales and IT) through VLANs, provides DHCP, DNS, HTTP, and TFTP services from one server, sends logs to a central syslog address, and routes traffic to a simulated ISP and the internet.
 
-**Author:** [Your Name]
+**Author:** Anish Raj
 **Tool:** Cisco Packet Tracer (logical and physical views)
 **Level:** CCNA intermediate learners
 
@@ -722,4 +722,4 @@ Expected path: 192.168.10.1, then 10.0.0.2, then 8.8.8.8.
 
 ## Author
 
-**[Your Name]**
+**Anish Raj**
