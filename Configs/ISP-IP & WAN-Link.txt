@@ -1,0 +1,19 @@
+en
+conf t
+hostname ISP
+no ip domain-lookup
+
+int se0/3/0
+description To-R1-Office
+ip address 10.0.0.2 255.255.255.252
+clock rate 64000
+no shut
+exit
+
+interface loopback 0
+description Internet-8.8.8.8
+ip address 8.8.8.8 255.255.255.255
+exit
+
+end
+wr

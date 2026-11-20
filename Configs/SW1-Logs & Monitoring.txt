@@ -1,0 +1,8 @@
+conf t
+
+service timestamps log datetime msec
+logging host 192.168.30.10
+logging trap informational
+logging on 
+end
+wr

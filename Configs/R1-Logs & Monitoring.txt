@@ -1,0 +1,13 @@
+conf t
+clock set 10:00:00 18 November 2026
+
+service timestamps log datetime msec
+
+logging buffered 8192 informational
+
+logging host 192.168.30.10
+logging trap informational
+logging on
+
+end
+wr

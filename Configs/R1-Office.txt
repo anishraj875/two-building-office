@@ -1,0 +1,43 @@
+en
+conf t
+hostname R1-Office
+no ip domain-lookup
+
+enable secret anishraj@8835
+service password-encryption
+username admin privilege 15 secret Admin@8835
+ip domain-name office.lab
+banner motd #Authorized access only#
+
+int gi0/0
+no shut
+exit
+
+int gi0/0.10
+description Sales-Vlan10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.224
+no shut
+exit
+
+int gi0/0.20
+description IT-Vlan20
+encapsulation dot1Q 20
+ip address 192.168.20.1 255.255.255.224
+no shut
+exit
+
+int gi0/1
+description Server-Lan
+ip address 192.168.30.1 255.255.255.240
+no shut
+exit
+
+int se0/3/0
+description To-ISP
+ip address 10.0.0.1 255.255.255.252
+no shut
+exit
+
+end
+wr

@@ -1,0 +1,19 @@
+ip dhcp excluded-address 192.168.10.1
+ip dhcp excluded-address 192.168.20.1
+
+ip dhcp pool Sales
+network 192.168.10.0 255.255.255.224
+default-router 192.168.10.1
+dns-server 192.168.30.10
+domain-name office.lab
+exit
+
+ip dhcp pool IT
+network 192.168.20.0 255.255.255.224
+default-router 192.168.20.1
+dns-server 192.168.30.10
+domain-name office.lab
+exit
+
+end
+wr

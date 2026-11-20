@@ -1,0 +1,33 @@
+enable
+configure terminal
+hostname SW1-Office
+no ip domain-lookup
+
+vlan 10
+name SALES
+vlan 20
+name IT
+exit
+
+int range fa0/1 - fa0/12
+switchport mode access
+switchport access vlan 10
+spanning-tree portfast
+no shut
+exit
+
+int range fa0/13-fa0/24
+switchport mode access
+switchport access vlan 20
+spanning-tree portfast
+no shut
+exit
+
+int gi0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+no shut
+exit
+
+end
+wr

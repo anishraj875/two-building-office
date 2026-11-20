@@ -1,0 +1,26 @@
+en
+anishraj@8835
+conf t
+
+ip route 0.0.0.0 0.0.0.0 10.0.0.2
+
+access-list 1 permit 192.168.10.0 0.0.0.31
+access-list 1 permit 192.168.20.0 0.0.0.31
+access-list 1 permit 192.168.30.0 0.0.0.15
+
+int gi0/0.10
+ip nat inside
+exit
+
+int gi0/.20
+ip nat inside
+exit
+
+int se0/3/0
+ip nat outside
+exit
+
+ip nat inside source list 1 interface serial 0/3/0 overload
+
+end
+wr
